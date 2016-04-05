@@ -1,4 +1,4 @@
-# Simple Dimenion/Dimension Item checks for ONS API load files
+# Simple Dimension/Dimension Item checks for ONS API load files
 
 ##create_checkfiles.py
 
