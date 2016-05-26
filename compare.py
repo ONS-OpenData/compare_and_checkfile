@@ -6,11 +6,19 @@ Created on Wed Sep 30 12:36:30 2015
 
 Compares the dimensions and dimension items within a CSV and a Check_file (.chk - a python dictionary in a file that retains the same info)
 
+You can create a .chk file using the create_checkfile.py script
+
+The .chk file must be located in /Check Files/ relative to this script and the file being checked.
+
+USAGE:
+python compare(oldfilename*, newfilename)
+
+* if you cant remember it'll be the .ckh file minus "CHECK-" and the file extension.
+
+
 """
 
 import pandas as pd
-import sys
-import numpy as np
 
 
 """

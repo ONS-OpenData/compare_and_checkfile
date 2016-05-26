@@ -5,16 +5,16 @@ Created on Fri Oct 16 10:45:53 2015
 @author:  Mike
 
 Create a checkfile using pickle
+
 """
 
 import pandas as pd
 import sys
-import numpy as np
 import pickle as pk
 
 
 """
-Create a dictionary of unique dimensions and dim items from a given csv 
+Create a dictionary of unique dimensions and dim items from a given WDA style flat csv file 
 """
 def create_unique_dict(load_file, name):
     my_uniques = []
@@ -33,9 +33,7 @@ def create_unique_dict(load_file, name):
     big_dict = dict(zip(wanted_cols, my_uniques))
     pk.dump(big_dict, open(name + '.chk', 'wb'))
 
+
 # Put the source files in here
-# TODO - use sys args!
-create_unique_dict('transform-rftnewordersq42015corrected-ConstNOT1-.csv', 'CHECK-NOT1')
-create_unique_dict('transform-rftnewordersq42015corrected-ConstNOT234-.csv', 'CHECK-NOT234')
-create_unique_dict('transform-rftnewordersq42015corrected-ConstNOT5-.csv', 'CHECK-NOT5')
-create_unique_dict('transform-rftnewordersq42015corrected-ConstNOT6-.csv', 'CHECK-NOT6')
+load_file = sys.argv[1]
+create_unique_dict(load_file, 'CHECK-' + load_file[:-4])
