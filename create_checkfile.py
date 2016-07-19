@@ -31,7 +31,9 @@ def create_unique_dict(load_file, name):
     for each in wanted_cols:
         my_uniques.append(pd.unique(obs_file[each].ravel()))
     big_dict = dict(zip(wanted_cols, my_uniques))
-    pk.dump(big_dict, open(name + '.chk', 'wb'))
+    out = open(name + '.chk', 'wb')
+    pk.dump(big_dict, out)
+    out.close()
 
 
 # Put the source files in here
